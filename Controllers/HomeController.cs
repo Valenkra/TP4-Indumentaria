@@ -15,11 +15,28 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewBag.EquiposIndumentaria = Equipos.EquiposIndumentaria;
         return View();
     }
 
     public IActionResult Privacy()
     {
+        return View();
+    }
+
+    public IActionResult SelectIndumentaria()
+    {
+        ViewBag.ListaMedias = Equipos.ListaMedias;
+        ViewBag.ListaPantalones = Equipos.ListaPantalones;
+        ViewBag.ListaRemeras = Equipos.ListaPantalones;
+        return View();
+    }
+
+    public IActionResult GuardarIndumentaria()
+    {
+        ViewBag.ListaMedias = Equipos.ListaMedias;
+        ViewBag.ListaPantalones = Equipos.ListaPantalones;
+        ViewBag.ListaRemeras = Equipos.ListaPantalones;
         return View();
     }
 
