@@ -1,2 +1,2 @@
 # TP4-Indumentaria
-El primer Tp viendo MVC
+El primer TP viendo MVC
