@@ -15,8 +15,4 @@ static class Equipos {
 
     public static Dictionary<string, Indumentaria> EquiposIndumentaria { get; private set; }  
 
-    public bool IngresarIndumentaria(string equipo, Indumentaria item){
-
-        return false;
-    }
 }
