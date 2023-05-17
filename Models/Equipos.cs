@@ -11,7 +11,7 @@ static class Equipos {
 
     public static Dictionary<string, Indumentaria> EquiposIndumentaria { get; private set; }  
 
-    public static bool IngresarIndumentaria(string EquipoSeleccionado, Indumentaria item){
+    public static bool IngresarIndumentaria(string EquipoSeleccionado){
         return EquiposIndumentaria.ContainsKey(EquipoSeleccionado);
     }
 

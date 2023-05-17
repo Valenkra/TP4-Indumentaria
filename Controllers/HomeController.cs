@@ -32,11 +32,27 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult GuardarIndumentaria()
+    public IActionResult GuardarIndumentaria(int equipo, int media, int pantalon, int remera)
     {
-        ViewBag.ListaMedias = Equipos.ListaMedias;
-        ViewBag.ListaPantalones = Equipos.ListaPantalones;
-        ViewBag.ListaRemeras = Equipos.ListaPantalones;
+        int[] parametros = {equipo,media,pantalon,remera};
+        List<Indumentaria> ropa = new List<Indumentaria>();
+        int temp = 0;
+        foreach(int param in parametros){
+            temp += (param > -1) ? 1 : 0; 
+        }
+        if(temp < 4){
+            return SelectIndumentaria();
+        }else{
+            string socks = Equipos.ListaMedias[media];
+            string pant = Equipos.ListaPantalones[pantalon];
+            string shirt = Equipos.ListaRemeras[remera];
+            string team = Equipos.ListaEquipos[equipo];
+            ropa.Add(new Indumentaria(socks, pant, shirt));
+            if(Equipos.IngresarIndumentaria(team)){
+                Equipos.EquiposIndumentaria.Add(team, ropa[ropa.Count - 1]);
+            }
+        }
+
         return View();
     }
 
