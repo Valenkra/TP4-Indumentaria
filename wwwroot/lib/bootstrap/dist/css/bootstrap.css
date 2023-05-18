@@ -2993,9 +2993,9 @@ textarea.form-control-lg {
 }
 
 .btn-secondary {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  color: #217fdd;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
 }
 .btn-secondary:hover {
   color: #fff;
@@ -3915,7 +3915,7 @@ textarea.form-control-lg {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: #217fdd;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }

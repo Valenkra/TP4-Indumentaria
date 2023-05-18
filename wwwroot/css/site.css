@@ -16,3 +16,32 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.btn-secondary {
+  color: #232527;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-secondary:hover, .nav-link:hover{
+  color: #fff;
+  background-color: #5c636a;
+  border-radius: .25rem;
+}
+
+.nav-item {
+  margin-right: .5rem;
+}
+
+#inicio{
+  color: #fff;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #7089af;
+  text-decoration: none;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}

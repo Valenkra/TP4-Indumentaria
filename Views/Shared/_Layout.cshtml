@@ -17,21 +17,28 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                        <li class="nav-item text-dark" id="inicio">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Medias">Medias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pantalones">Pantalones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Camisetas">Camisetas</a>
-                        </li>
+
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Seleccionar Indumentaria
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Medias">Medias</a></li>
+                                
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Pantalones">Pantalones</a></li>
+
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Camisetas">Camiseta</a></li>
+                            </ul>
+                        </div>
                     </ul>
+
+                    
                 </div>
             </div>
         </nav>
