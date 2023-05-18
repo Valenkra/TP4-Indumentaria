@@ -4,3 +4,9 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Aquí ocurre la venta de camisetas</p>
+
+@foreach (var hgh in Equipos.ListaEquipos)
+{
+    ViewBag.Equipos = hgh;
+    <p>@hgh</p>
+}

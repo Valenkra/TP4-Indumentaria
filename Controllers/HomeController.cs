@@ -66,8 +66,9 @@ public class HomeController : Controller
         return View();
     }
 
-        public IActionResult Camisetas()
+    public IActionResult Camisetas()
     {
+        ViewBag.Equipos = Equipos.ListaEquipos;
         return View();
     }
 
