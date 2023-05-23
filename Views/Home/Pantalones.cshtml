@@ -3,4 +3,8 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Aquí ocurre la venta de medias</p>
+
+
+@foreach(string pantalon in ViewBag.Pants){
+    <img class="card-img-top" src="/img/@pantalon" alt="..." />
+}

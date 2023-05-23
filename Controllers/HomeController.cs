@@ -58,11 +58,22 @@ public class HomeController : Controller
 
     public IActionResult Medias()
     {
+        string[] medias = new string[10];
+        for(int i =1; i <= medias.Length; i++){
+            medias[i-1] = $"medias{i}.jpg";
+        }
+        ViewBag.Medias = medias;
+        ViewBag.NameMedia = Equipos.ListaMedias;
         return View();
     }
 
     public IActionResult Pantalones()
     {
+        string[] pants = new string[10];
+        for(int i =1; i <= pants.Length; i++){
+            pants[i-1] = $"pantalon{i}.webp";
+        }
+        ViewBag.Pants = pants;
         return View();
     }
 

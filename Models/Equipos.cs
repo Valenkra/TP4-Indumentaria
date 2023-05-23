@@ -4,7 +4,7 @@ static class Equipos {
     "Talleres", "Racing", "Independiente", "Belgrano",
     "Lanus", "Rosario Central", "Estudiantes de La Plata"};
     
-    public static List<string> ListaMedias { get; private set; } = actualizarLista("medias");
+    public static List<string> ListaMedias { get; private set; } = new List<string>(){ "media cheta", "media 1"};
     public static List<string> ListaPantalones { get; private set; } = actualizarLista("camiseta");
 
     public static List<string> ListaRemeras { get; private set; } = actualizarLista("pantalon");
