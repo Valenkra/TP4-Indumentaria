@@ -8,6 +8,10 @@ html {
   }
 }
 
+.p-4{
+  margin-top: 1.75rem;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -130,8 +134,7 @@ body {
 }
 
 .btn-secondary:hover, .nav-link:hover{
-  color: #fff;
-  background-color: #5c636a;
+  background-color: #eceef0;
   border-radius: .25rem;
 }
 
