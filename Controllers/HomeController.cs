@@ -28,7 +28,8 @@ public class HomeController : Controller
     {
         ViewBag.ListaMedias = Equipos.ListaMedias;
         ViewBag.ListaPantalones = Equipos.ListaPantalones;
-        ViewBag.ListaRemeras = Equipos.ListaPantalones;
+        ViewBag.ListaRemeras = Equipos.ListaRemeras;
+        ViewBag.Equipos = Equipos.ListaEquipos;
         return View();
     }
 

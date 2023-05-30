@@ -5,83 +5,112 @@
 <body>
     <h1 class="text-center">Indumentaria Deportiva de Máxima Calidad</h1>
     <section class="">
-        <div class="container px-3 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <form action="">
+            <div class="container px-3 px-lg-5 mt-5">
 
+                <select class="form-select" aria-label="Default select example" style="margin-bottom: .5rem;">
+                    <option value="" disabled selected>Elegir Equipo</option>
+                    @for(int i = 0; i < @ViewBag.Equipos.Count; i++)
+                    {
+                        <option value="@i">@ViewBag.Equipos[i]</option>
+                    }
+                </select>
 
-            @for(int i = 1; i <= 5; i++){
-                    string path = $"/img/camiseta{i}.webp";
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="@path" width=400 alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">alp</h5>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    @for(int i = 0; i < @ViewBag.ListaRemeras.Count; i++){
+                            string path = $"/img/camiseta{i+1}.webp";
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="@path" width=400 alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">@ViewBag.ListaRemeras[i]</h5>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a></div>
-                            </div>
-                        </div>
-                    </div>
-            }
-
-            @for(int i = 1; i <= 5; i++){
-                    string path = $"/img/pantalon{i}.webp";
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="@path" width=400 alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">alp</h5>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a></div>
-                            </div>
-                        </div>
-                    </div>
-            }
-
-            @for(int i = 1; i <= 5; i++){
-                    string path = $"/img/medias{i}.jpg";
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="@path" width=400 alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">alp</h5>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a></div>
-                            </div>
-                        </div>
-                    </div>
-            }
-
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><h5>Carrito</h5></div>
-                        </div>
-                    </div>
+                    }
                 </div>
 
+                <div class="elegir-producto">
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="" disabled selected>Elegir Remera</option>
+                        @for(int i = 0; i < @ViewBag.Equipos.Count; i++)
+                        {
+                            <option value="@i">@ViewBag.ListaRemeras[i]</option>
+                        }
+                    </select>
+                    <div class="text-center"><input type="number" min="0" max="50" step="1" placeholder="Cantidad" class="input-number"></div>
+                </div>
+
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                @for(int i = 0; i < @ViewBag.ListaPantalones.Count; i++){
+                        string path = $"/img/pantalon{i+1}.webp";
+                        <div class="col mb-5">
+                            <div class="card h-100">
+                                <!-- Product image-->
+                                <img class="card-img-top" src="@path" width=400 alt="..." />
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder">@ViewBag.ListaRemeras[i]</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                }
+                </div>
+
+                <div class="elegir-producto">
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="" disabled selected>Elegir Pantalon</option>
+                        @for(int i = 0; i < @ViewBag.ListaPantalones.Count; i++)
+                        {
+                            <option value="@i">@ViewBag.ListaPantalones[i]</option>
+                        }
+                    </select>
+                    <div class="text-center"><input type="number" min="0" max="50" step="1" placeholder="Cantidad" class="input-number"></div>
+                </div>
+
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    @for(int i = 0; i < @ViewBag.ListaMedias.Count; i++){
+                            string path = $"/img/medias{i+1}.jpg";
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <!-- Product image-->
+                                    <img class="card-img-top" src="@path" width=400 alt="..." />
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">@ViewBag.ListaMedias[i]</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    }
+                </div>
+
+                <div class="elegir-producto">
+                    <select class="form-select" aria-label="Default select example">
+                        <option value="" disabled selected>Elegir Medias</option>
+                        @for(int i = 0; i < @ViewBag.ListaMedias.Count; i++)
+                        {
+                            <option value="@i">@ViewBag.ListaMedias[i]</option>
+                        }
+                    </select>
+
+                    <div class="text-center"><input type="number" min="0" max="50" step="1" placeholder="Cantidad" class="input-number"></div>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary">
+                
+                </div>
             </div>
-        </div>
+        </form>
     </section>
 </body>
 
