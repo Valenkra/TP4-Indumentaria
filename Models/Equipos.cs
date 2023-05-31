@@ -5,8 +5,9 @@ static class Equipos {
     "Lanus", "Rosario Central", "Estudiantes de La Plata"};
     
     public static List<string> ListaMedias { get; private set; } = new List<string>()
-    { "media cheta", "media 1"};
-    public static List<string> ListaPantalones { get; private set; } = new List<string>(){ "media cheta", "media 1"};
+    { "media cheta", "media 1", "media 1", "media 1", "media 1", "media 1", "media 1", "media 1", "media 1", "media 1",};
+    public static List<string> ListaPantalones { get; private set; } = new List<string>()
+    { "Pnat","Pnat","Pnat","Pnat","Pnat","Pnat","Pnat","Pnat","Pnat","Pnat"};
 
     public static List<string> ListaRemeras { get; private set; } = new List<string>()
     { "Argentina Clasica", "River Negra" , "River Clasica",
