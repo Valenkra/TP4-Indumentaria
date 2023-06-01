@@ -15,7 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewBag.EquiposIndumentaria = Equipos.EquiposIndumentaria;
+        ViewBag.Nombre = "Valen :)";
         return View();
     }
 
@@ -35,52 +35,11 @@ public class HomeController : Controller
 
     public IActionResult GuardarIndumentaria(int equipo, int media, int pantalon, int remera)
     {
-        int[] parametros = {equipo,media,pantalon,remera};
-        List<Indumentaria> ropa = new List<Indumentaria>();
-        int temp = 0;
-        foreach(int param in parametros){
-            temp += (param > -1) ? 1 : 0; 
+        ViewBag.Worked = 0;
+        Indumentaria obj = new Indumentaria(Equipos.ListaMedias[media], Equipos.ListaPantalones[pantalon], Equipos.ListaRemeras[remera]);
+        if(Equipos.IngresarIndumentaria(Equipos.ListaEquipos[equipo],  obj)){
+            ViewBag.Worked = 1;
         }
-        if(temp < 4){
-            return SelectIndumentaria();
-        }else{
-            string socks = Equipos.ListaMedias[media];
-            string pant = Equipos.ListaPantalones[pantalon];
-            string shirt = Equipos.ListaRemeras[remera];
-            string team = Equipos.ListaEquipos[equipo];
-            ropa.Add(new Indumentaria(socks, pant, shirt));
-            if(Equipos.IngresarIndumentaria(team)){
-                Equipos.EquiposIndumentaria.Add(team, ropa[ropa.Count - 1]);
-            }
-        }
-
-        return View();
-    }
-
-    public IActionResult Medias()
-    {
-        string[] medias = new string[10];
-        for(int i =1; i <= medias.Length; i++){
-            medias[i-1] = $"medias{i}.jpg";
-        }
-        ViewBag.Medias = medias;
-        ViewBag.NameMedia = Equipos.ListaMedias;
-        return View();
-    }
-
-    public IActionResult Pantalones()
-    {
-        string[] pants = new string[10];
-        for(int i =1; i <= pants.Length; i++){
-            pants[i-1] = $"pantalon{i}.webp";
-        }
-        ViewBag.Pants = pants;
-        return View();
-    }
-
-    public IActionResult Camisetas()
-    {
-        ViewBag.Equipos = Equipos.ListaEquipos;
         return View();
     }
 

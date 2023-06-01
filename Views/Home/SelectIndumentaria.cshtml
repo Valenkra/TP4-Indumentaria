@@ -5,14 +5,14 @@
 <body>
     <h1 class="text-center">Indumentaria Deportiva de Máxima Calidad</h1>
     <section class="">
-        <form action="">
+        <form action="GuardarIndumentaria">
             <div class="container px-3 px-lg-5 mt-5">
 
-                <select class="form-select" aria-label="Default select example" style="margin-bottom: .5rem;">
+                <select class="form-select" aria-label="Default select example" style="margin-bottom: .5rem;" name="equipo" required>
                     <option value="" disabled selected>Elegir Equipo</option>
                     @for(int i = 0; i < @ViewBag.Equipos.Count; i++)
                     {
-                        <option value="@i">@ViewBag.Equipos[i]</option>
+                        <option value="@i" >@ViewBag.Equipos[i]</option>
                     }
                 </select>
 
@@ -36,14 +36,13 @@
                 </div>
 
                 <div class="elegir-producto">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" name="remera" required>
                         <option value="" disabled selected>Elegir Remera</option>
                         @for(int i = 0; i < @ViewBag.Equipos.Count; i++)
                         {
                             <option value="@i">@ViewBag.ListaRemeras[i]</option>
                         }
                     </select>
-                    <div class="text-center"><input type="number" min="0" max="50" step="1" placeholder="Cantidad" class="input-number"></div>
                 </div>
 
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -66,14 +65,13 @@
                 </div>
 
                 <div class="elegir-producto">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" name="pantalon" required>
                         <option value="" disabled selected>Elegir Pantalon</option>
                         @for(int i = 0; i < @ViewBag.ListaPantalones.Count; i++)
                         {
                             <option value="@i">@ViewBag.ListaPantalones[i]</option>
                         }
                     </select>
-                    <div class="text-center"><input type="number" min="0" max="50" step="1" placeholder="Cantidad" class="input-number"></div>
                 </div>
 
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -96,15 +94,13 @@
                 </div>
 
                 <div class="elegir-producto">
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" name="media" required>
                         <option value="" disabled selected>Elegir Medias</option>
                         @for(int i = 0; i < @ViewBag.ListaMedias.Count; i++)
                         {
                             <option value="@i">@ViewBag.ListaMedias[i]</option>
                         }
                     </select>
-
-                    <div class="text-center"><input type="number" min="0" max="50" step="1" placeholder="Cantidad" class="input-number"></div>
                 </div>
                 <input type="submit" value="Submit" class="btn btn-primary">
                 

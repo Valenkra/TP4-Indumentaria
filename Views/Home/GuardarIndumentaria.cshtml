@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Guardando Info";
+}
+<body>
+
+    @if(ViewBag.Worked == 0){
+        <h1 class="text-center">Muchas gracias por elegirnos otra vez!</h1>
+        <p class="text-center">Vimos que ya se había comprado para este equipo, así que mantuvimos la información original! :D</p>
+    }else{
+        <h1 class="text-center">Muchas gracias por comprar!</h1>
+    }
+    <p class="text-center">Si quiere seguir comprando presione <a href='@Url.Action("SelectIndumentaria", "Home")'>aqui</a>!</p>
+</body>

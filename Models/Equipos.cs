@@ -5,9 +5,14 @@ static class Equipos {
     "Lanus", "Rosario Central", "Estudiantes de La Plata"};
     
     public static List<string> ListaMedias { get; private set; } = new List<string>()
-    { "media cheta", "media 1", "media 1", "media 1", "media 1", "media 1", "media 1", "media 1", "media 1", "media 1",};
+    { "Gris Alta", "Dos rayas", "Alta Jordan", 
+    "Adidas True Colors", "Adidas - FILA", "Classic Band", 
+    "Soquete Nike", "Soquete Puma", "Soquete ROSA", "FUNNY SOCKS",};
     public static List<string> ListaPantalones { get; private set; } = new List<string>()
-    { "Pnat","Pnat","Pnat","Pnat","Pnat","Pnat","Pnat","Pnat","Pnat","Pnat"};
+    { "Azul Argentina","Argentina Classic","Adidas Black",
+    "Full Black", "Red Eagle",
+    "True Colors","A. Sports","Gris Team",
+    "Full Green","Adidas Classic"};
 
     public static List<string> ListaRemeras { get; private set; } = new List<string>()
     { "Argentina Clasica", "River Negra" , "River Clasica",
@@ -15,10 +20,15 @@ static class Equipos {
     "Arsenal - Adidas", "Argentina Azul-Dorado", "Argentina Azul-Celeste",
     "Deutscher Fussball Bund"};
 
-    public static Dictionary<string, Indumentaria> EquiposIndumentaria { get; private set; }  
+    public static Dictionary<string, Indumentaria> EquiposIndumentaria { get; private set; }  = new Dictionary<string, Indumentaria>();
 
-    public static bool IngresarIndumentaria(string EquipoSeleccionado){
-        return EquiposIndumentaria.ContainsKey(EquipoSeleccionado);
+    public static bool IngresarIndumentaria(string EquipoSeleccionado, Indumentaria indu){
+        if(!EquiposIndumentaria.ContainsKey(EquipoSeleccionado)){
+            EquiposIndumentaria.Add(EquipoSeleccionado, indu);
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
